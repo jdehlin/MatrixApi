@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatrixPhone.DataModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,13 @@ namespace MatrixPhone
         public Login()
         {
             this.InitializeComponent();
+            Frame rootFrame = Window.Current.Content as Frame;
+
+
+            if (UserDataSource.GetUser().Email != null)
+            {
+                rootFrame.Navigate(typeof(ProjectListPage));
+            }
         }
 
         /// <summary>

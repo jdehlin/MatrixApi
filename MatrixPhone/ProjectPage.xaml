@@ -43,7 +43,6 @@
             <ListView
                     ItemsSource="{Binding Tickets}"
                     IsItemClickEnabled="True"
-                    ItemClick="ItemView_ItemClick"
                     ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
