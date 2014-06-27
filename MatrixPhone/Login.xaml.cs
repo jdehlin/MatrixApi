@@ -1,5 +1,4 @@
-﻿using MatrixPhone.DataModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,13 +25,6 @@ namespace MatrixPhone
         public Login()
         {
             this.InitializeComponent();
-            Frame rootFrame = Window.Current.Content as Frame;
-
-
-            if (UserDataSource.GetUser().Email != null)
-            {
-                rootFrame.Navigate(typeof(ProjectListPage));
-            }
         }
 
         /// <summary>
@@ -42,6 +34,11 @@ namespace MatrixPhone
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
