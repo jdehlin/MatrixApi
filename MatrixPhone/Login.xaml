@@ -5,10 +5,12 @@
     xmlns:local="using:MatrixPhone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
+    <Page.Background>
+        <ImageBrush Stretch="Fill"/>
+    </Page.Background>
 
-    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="LayoutRoot" Background="Black">
 
         <Grid.ChildrenTransitions>
             <TransitionCollection>
@@ -22,12 +24,13 @@
         </Grid.RowDefinitions>
 
         <!-- Title Panel -->
-        <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock Text="The Matrix" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+        <StackPanel Grid.Row="0" Margin="10,0,10,414" Grid.RowSpan="2">
+            <TextBlock Text="The Matrix" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,9.833,0" Foreground="White"/>
             <TextBlock Text="Login" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
-            <TextBox PlaceholderText="Email" />
-            <TextBox PlaceholderText="Password" />
+            <TextBox PlaceholderText="Email" Margin="0,0,0,20" />
+            <TextBox PlaceholderText="Password" Margin="0,0,0,0" />
         </StackPanel>
+        <Image HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>
