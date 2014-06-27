@@ -1,5 +1,8 @@
-﻿using MatrixPhone.Common;
+﻿using MatrixApi.Domain;
+using MatrixPhone.Common;
 using MatrixPhone.Data;
+using MatrixPhone.DataModel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,18 +27,40 @@ namespace MatrixPhone
     /// <summary>
     /// A page that displays details for a single item within a group.
     /// </summary>
-    public sealed partial class ItemPage : Page
+    public sealed partial class ProjectPage : Page
     {
         private readonly NavigationHelper navigationHelper;
         private readonly ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private Project project = new Project();
+        public int ProjectId;
 
-        public ItemPage()
+        public ProjectPage()
         {
             this.InitializeComponent();
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
+            this.Loaded += ItemPage_Loaded;
+        }
+
+        async void ItemPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            var httpClient = new appHttpClient();
+
+            var response = await httpClient.GetAsync("Project/" + ProjectId.ToString());
+            try
+            {
+                response.EnsureSuccessStatusCode(); // Throw on error code.
+            }
+            catch
+            {
+            }
+
+            var result = await response.Content.ReadAsStringAsync();
+
+            project = JsonConvert.DeserializeObject<Project>(result);
         } 
 
         /// <summary>

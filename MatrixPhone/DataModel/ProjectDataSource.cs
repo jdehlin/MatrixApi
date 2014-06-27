@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MatrixApi.Domain;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,11 @@ namespace MatrixPhone.DataModel
 {
     class ProjectDataSource
     {
+        private static Project project = new Project();
+
+
+        public static Project GetProject(int ProjectId) {
+            return project;
+        }
     }
 }
