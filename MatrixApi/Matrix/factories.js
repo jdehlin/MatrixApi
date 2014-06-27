@@ -12,7 +12,7 @@ matrixApp.factory('User', function ($http, $q, Base64) {
     return {
         login: function (user) {
             var deferred = $q.defer();
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + Base64.encode(user.username + ':' + user.password);
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + Base64.encode(user.Email + ':' + user.Password);
             $http.get('/API/Users')
                 .success(
                     function (data, status, headers, config) {

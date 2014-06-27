@@ -20,12 +20,12 @@ namespace MatrixApi.Filters
         { }
 
 
-        protected override bool OnAuthorizeUser(string username, string password, HttpActionContext actionContext)
+        protected override bool OnAuthorizeUser(string Email, string Password, HttpActionContext actionContext)
         {
             HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
 
             var session = NHibernateHelper.GetCurrentSession();
-            var result = session.Query<User>().FirstOrDefault(u => u.Email.ToLower() == username.ToLower() && u.Password == password);
+            var result = session.Query<User>().FirstOrDefault(u => u.Email.ToLower() == Email.ToLower() && u.Password == Password);
             return result != null;
         }
     }
