@@ -1,4 +1,5 @@
 ﻿using MatrixApi.Domain;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace MatrixPhone.DataModel
 
             var result = await response.Content.ReadAsStringAsync();
 
-            //user = JsonConvert.DeserializeObject<User>(result);
+            user = JsonConvert.DeserializeObject<User>(result);
         }
 
         public static string Auth()
