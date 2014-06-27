@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Json;
-using Newtonsoft.Json;
 
 
 namespace MatrixPhone.DataModel
@@ -34,7 +33,7 @@ namespace MatrixPhone.DataModel
 
             var result = await response.Content.ReadAsStringAsync();
 
-            user = JsonConvert.DeserializeObject<User>(result);
+            //user = JsonConvert.DeserializeObject<User>(result);
         }
 
         public static string Auth()

@@ -2,7 +2,6 @@
 using MatrixPhone.Common;
 using MatrixPhone.Data;
 using MatrixPhone.DataModel;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -60,7 +59,7 @@ namespace MatrixPhone
 
             var result = await response.Content.ReadAsStringAsync();
 
-            project = JsonConvert.DeserializeObject<Project>(result);
+            //project = JsonConvert.DeserializeObject<Project>(result);
         } 
 
         /// <summary>

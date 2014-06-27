@@ -92,15 +92,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Project.xaml">
+    <Page Include="ProjectPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PivotPage.xaml">
+    <Page Include="_PivotPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProjectList.xaml">
+    <Page Include="ProjectListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,10 +113,12 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="DataModel\httpClient.cs" />
     <Compile Include="DataModel\ProjectDataSource.cs" />
     <Compile Include="DataModel\ProjectsDataSource.cs" />
     <Compile Include="DataModel\SampleDataSource.cs" />
     <Compile Include="DataModel\TicketDataSource.cs" />
+    <Compile Include="DataModel\UserDataSource.cs" />
     <Compile Include="Domain\Comment.cs" />
     <Compile Include="Domain\Enums.cs" />
     <Compile Include="Domain\FakeData.cs" />
@@ -132,14 +134,14 @@
     <Compile Include="Ticket.xaml.cs">
       <DependentUpon>Ticket.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Project.xaml.cs">
-      <DependentUpon>Project.xaml</DependentUpon>
+    <Compile Include="ProjectPage.xaml.cs">
+      <DependentUpon>ProjectPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PivotPage.xaml.cs">
-      <DependentUpon>PivotPage.xaml</DependentUpon>
+    <Compile Include="_PivotPage.xaml.cs">
+      <DependentUpon>_PivotPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProjectList.xaml.cs">
-      <DependentUpon>ProjectList.xaml</DependentUpon>
+    <Compile Include="ProjectListPage.xaml.cs">
+      <DependentUpon>ProjectListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

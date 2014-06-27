@@ -1,5 +1,4 @@
 ﻿using System;
-using NHibernate.Mapping;
 using System.Collections.Generic;
 
 namespace MatrixApi.Domain
