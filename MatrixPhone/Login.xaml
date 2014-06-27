@@ -30,8 +30,8 @@
         <StackPanel Grid.Row="0" Margin="10,0,10,10" Grid.RowSpan="2">
             <TextBlock Text="The Matrix" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,9.833,0" Foreground="White"/>
             <TextBlock Text="Login" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
-            <TextBox PlaceholderText="Email" Margin="0,0,0,20" />
-            <TextBox PlaceholderText="Password" Margin="0,0,0,0" />
+            <TextBox x:Name="Email" PlaceholderText="Email" Margin="0,0,0,20" />
+            <TextBox x:Name="Password" PlaceholderText="Password" Margin="0,0,0,0" />
             <Button Content="Jack In" Margin="0,20,0,0" Grid.Row="1" VerticalAlignment="Top" Background="Transparent" Click="Button_Click" HorizontalAlignment="Stretch"/>
         </StackPanel>
 
